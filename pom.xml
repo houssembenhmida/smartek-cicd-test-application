@@ -11,7 +11,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <sonar.host.url>http://localhost:9000</sonar.host.url>
+        <sonar.host.url>http://sonarqube-piepline-test.apps-crc.testing/</sonar.host.url>
+        <!--<sonar.host.url>http://localhost:9000</sonar.host.url>-->
     </properties>
     
     <dependencies>
