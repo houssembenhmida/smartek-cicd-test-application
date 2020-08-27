@@ -11,7 +11,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <sonar.host.url>https://sonarqube-test-pipeline.apps-crc.testing/</sonar.host.url>
+        <sonar.host.url>sonarqube.test-pipeline..svc.cluster.local</sonar.host.url>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <!--<sonar.host.url>http://localhost:9000</sonar.host.url>-->
