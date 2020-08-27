@@ -34,3 +34,13 @@ spec:
   selector:
     app: cicd-app
 ---
+apiVersion: v1
+kind: Route
+metadata:
+  name: cicd-app
+spec:
+  host: cicd-app-test-pipeline.apps-crc.testing
+  path: "/" 
+  to:
+    kind: Service
+    name: cicd-app
