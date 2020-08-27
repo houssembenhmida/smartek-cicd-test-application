@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: ImageStream
+metadata:
+  name: cicd-app
+  labels:
+    application: cicd-app
+spec:
+  selector:
+    matchLabels:
+      app: cicd-app
+  tags:
+    - name: latest
+---
+apiVersion: v1
+kind: BuildConfig
+metadata:
+  name: cicd-app
+  labels:
+    application: cicd-app
+spec:
+  selector:
+    matchLabels:
+      app: cicd-app
+  source:
+    type: Git
+    git:
+      uri: https://github.com/houssembenhmida/smartek-cicd-test-application.git
+      ref: master
+  strategy:
+    type: Source
+    sourceStrategy:
+      from:
+        kind: ImageStreamTag
+        namespace: openshift
+        name: jboss-webserver31-tomcat8-openshift:1.4
+  output:
+    to:
+      kind: ImageStreamTag
+      name: cicd-app:latest
